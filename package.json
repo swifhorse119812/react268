@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "license": "see LICENSE file",
-  "description": "Code from the React tutorial.",
+  "description": "Code from the React tutorial.please look at this",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.4.3",
