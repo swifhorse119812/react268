@@ -32,6 +32,7 @@ function routeRequest()
         echo file_get_contents('./public/index.html');
     } elseif (preg_match('/\/api\/comments(\?.*)?/', $uri)) {
         $comments = file_get_contents('comments.json');
+        
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $commentsDecoded = json_decode($comments, true);
             $commentsDecoded[] = [
@@ -41,7 +42,9 @@ function routeRequest()
             ];
 
             $comments = json_encode($commentsDecoded, JSON_PRETTY_PRINT);
+            
             file_put_contents('comments.json', $comments);
+            
         }
         header('Content-Type: application/json');
         header('Cache-Control: no-cache');
